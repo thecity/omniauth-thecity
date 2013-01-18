@@ -1,4 +1,37 @@
-omniauth-thecity
-================
+# Omniauth::Thecity
 
-Omniauth Strategy for Accessing The City OAuth2 Provider
+TODO: Write a gem description
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'omniauth-thecity'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install omniauth-thecity
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+
+
+#### THIS BELONGS IN omniauth.rb INITIALIZER FOR A PROJECT ####
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :thecity, "APPID", "SECRET", :scope => 'user_basic user_extended'
+end
+
