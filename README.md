@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Place this in omniauth.rb initializer for the project
+
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :thecity, "APPID", "SECRET", :scope => 'user_basic user_extended'
+    end
 
 ## Contributing
 
@@ -30,9 +34,5 @@ TODO: Write usage instructions here
 
 
 
-#### THIS BELONGS IN omniauth.rb INITIALIZER FOR A PROJECT ####
 
-    Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :thecity, "APPID", "SECRET", :scope => 'user_basic user_extended'
-    end
 
