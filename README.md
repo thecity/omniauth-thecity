@@ -32,7 +32,7 @@ TODO: Write usage instructions here
 
 #### THIS BELONGS IN omniauth.rb INITIALIZER FOR A PROJECT ####
 
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :thecity, "APPID", "SECRET", :scope => 'user_basic user_extended'
-end
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :thecity, "APPID", "SECRET", :scope => 'user_basic user_extended'
+    end
 
