@@ -23,7 +23,7 @@ module OmniAuth
       end
 
       def subdomain
-        @subdomain ||= session[:subdomain] || request.params["subdomain"] || request.headers['HTTP_X_CITY_SUBDOMAIN'] || nil rescue nil
+        @subdomain ||= request.params["subdomain"] || request.headers['HTTP_X_CITY_SUBDOMAIN'] || nil rescue nil
       end
 
       uid do
@@ -35,11 +35,11 @@ module OmniAuth
       end
 
       def raw_info
-        if subdomain
+        #if subdomain
           @raw_info ||= access_token.get("/authorization?subdomain=#{subdomain}").parsed
-        else
-          @raw_info ||= access_token.get("/authorization").parsed
-        end
+        #else
+        #  @raw_info ||= access_token.get("/authorization").parsed
+        #end
       end
     end
   end
