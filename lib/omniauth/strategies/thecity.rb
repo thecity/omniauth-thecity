@@ -36,7 +36,7 @@ module OmniAuth
 
       def raw_info
         if @subdomain
-          @raw_info ||= access_token.get("/authorization?subdomain=#{session[:subdomain]}").parsed
+          @raw_info ||= access_token.get("/authorization?subdomain=#{@subdomain}").parsed
         else
           @raw_info ||= access_token.get("/authorization").parsed
         end
