@@ -12,6 +12,8 @@ module OmniAuth
         authorize_path: "/oauth/authorize"
       }
 
+      option :subdomain, nil
+
       def request_phase
         redirect client.auth_code.authorize_url({:redirect_uri => callback_url, :subdomain => subdomain}.merge(authorize_params))
       end
@@ -23,7 +25,7 @@ module OmniAuth
       end
 
       def subdomain
-        @subdomain ||= request.params["subdomain"] || request.headers['HTTP_X_CITY_SUBDOMAIN'] || nil rescue nil
+        @subdomain ||= options.subdomain || request.params["subdomain"] || request.headers['HTTP_X_CITY_SUBDOMAIN'] || nil rescue nil
       end
 
       uid do
