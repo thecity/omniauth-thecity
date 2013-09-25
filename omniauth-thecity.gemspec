@@ -11,8 +11,8 @@ Gem::Specification.new do |gem|
   gem.email         = ["mark@onthecity.org"]
   gem.description   = %q{OmniAuth Strategy for using The City's OAuth 2 Provider}
   gem.summary       = %q{TO DO: Write a gem summary}
-  gem.homepage      = ""
-
+  gem.homepage      = "https://github.com/thecity/omniauth-thecity"
+  gem.licenses      = ['MIT']
   gem.add_runtime_dependency 'omniauth-oauth2', '~> 1.1.1'
 
 
