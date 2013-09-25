@@ -31,6 +31,33 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+### The City subdomains
+
+City users have one global user, and then a local user for each subdomain (City) they have an active account. 
+
+When a user successfully authenticates, omnniauth-thecity returns an array of local users belonging to the City global user.  If you pass along a subdomain, The City authentication service will only return an active local user for the subdomain you passed in.
+
+If your app only cares about one City subdomain (e.g. gracechurch.onthecity.org ), you can configure omniauth-thecity globally like this:
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :thecity, "APPID", "SECRET", :scope => 'user_basic user_extended', :subdomain => 'gracechurch'}
+end
+```
+
+Otherwise, you can set the subdomain per request as a query parameter, or header.
+
+For example, when using [devise](https://github.com/plataformatec/devise) you can pass the subdomain using the route helper:
+
+```ruby
+user_omniauth_authorize_path(:thecity, params: {subdomain: 'gracechurch'})
+```
+
+or as a custom header in your request:
+
+```
+X_THECITY_SUBDOMAIN: gracechurch
+```
+
 ## Authentication Hash
 An example auth hash available in `request.env['omniauth.auth']`:
 

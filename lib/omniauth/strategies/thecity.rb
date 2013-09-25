@@ -25,7 +25,7 @@ module OmniAuth
       end
 
       def subdomain
-        options.subdomain ||= request.params["subdomain"] || request.headers['HTTP_X_CITY_SUBDOMAIN'] || nil rescue nil
+        options.subdomain ||= request.params["subdomain"] || request.headers['HTTP_X_THECITY_SUBDOMAIN'] || nil rescue nil
       end
 
       uid do
