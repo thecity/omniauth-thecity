@@ -12,14 +12,20 @@ module OmniAuth
         authorize_path: "/oauth/authorize"
       }
 
+      option :subdomain, nil
+
       def request_phase
-        redirect client.auth_code.authorize_url({:redirect_uri => callback_url}.merge(authorize_params))
+        redirect client.auth_code.authorize_url({:redirect_uri => callback_url, :subdomain => subdomain}.merge(authorize_params))
       end
 
       def authorize_params
          super.tap do |params|
            params[:scope] ||= DEFAULT_SCOPE
          end
+      end
+
+      def subdomain
+        options.subdomain ||= request.params["subdomain"] || request.headers['HTTP_X_CITY_SUBDOMAIN'] || nil rescue nil
       end
 
       uid do
@@ -31,8 +37,8 @@ module OmniAuth
       end
 
       def raw_info
-        if session[:subdomain].present?
-          @raw_info ||= access_token.get("/authorization?subdomain=#{session[:subdomain]}").parsed
+        if subdomain
+          @raw_info ||= access_token.get("/authorization?subdomain=#{subdomain}").parsed
         else
           @raw_info ||= access_token.get("/authorization").parsed
         end
