@@ -1,12 +1,8 @@
 # Omniauth::Thecity
 
-<<<<<<< HEAD
 [![Gem Version](https://badge.fury.io/rb/omniauth-thecity.png)](http://badge.fury.io/rb/omniauth-thecity)
 
-TODO: Write a gem description
-=======
 This gem contains The City strategy for OmniAuth.
->>>>>>> cc4d2a6519690445f26f0df5c1b2b37599d026d3
 
 ## Before You Begin
 
