@@ -1,5 +1,7 @@
 # Omniauth::Thecity
 
+[![Gem Version](https://badge.fury.io/rb/omniauth-thecity.png)](http://badge.fury.io/rb/omniauth-thecity)
+
 TODO: Write a gem description
 
 ## Installation
