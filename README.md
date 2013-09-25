@@ -1,6 +1,7 @@
 # Omniauth::Thecity
 
 [![Gem Version](https://badge.fury.io/rb/omniauth-thecity.png)](http://badge.fury.io/rb/omniauth-thecity)
+[![Dependency Status](https://gemnasium.com/thecity/omniauth-thecity.png)](https://gemnasium.com/thecity/omniauth-thecity)
 
 This gem contains The City strategy for OmniAuth.
 
