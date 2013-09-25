@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = "omniauth-thecity"
   gem.version       = Omniauth::TheCity::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.authors       = ["Mark Blair"]
+  gem.authors       = ["Mark Blair", "Robert Leib"]
   gem.email         = ["mark@onthecity.org"]
   gem.description   = %q{OmniAuth Strategy for using The City's OAuth 2 Provider}
   gem.summary       = %q{TO DO: Write a gem summary}
