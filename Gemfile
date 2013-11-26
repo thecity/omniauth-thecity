@@ -7,6 +7,7 @@ gemspec
 gem 'omniauth-oauth2', '~> 1.1.1'
 
 group :development, :test do
+  gem 'rake'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-bundler'
