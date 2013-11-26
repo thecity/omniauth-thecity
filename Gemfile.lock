@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-thecity (0.0.1)
+    omniauth-thecity (1.0.1)
       omniauth-oauth2 (~> 1.1.1)
 
 GEM
@@ -28,9 +28,12 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     rack (1.4.1)
+    rake (10.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  omniauth-oauth2 (~> 1.1.1)
   omniauth-thecity!
+  rake

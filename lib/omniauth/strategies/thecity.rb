@@ -20,12 +20,12 @@ module OmniAuth
 
       def authorize_params
          super.tap do |params|
-           params[:scope] ||= DEFAULT_SCOPE
+           request.params["scope"] || params[:scope] || DEFAULT_SCOPE
          end
       end
 
       def subdomain
-        options.subdomain ||= request.params["subdomain"] || request.headers['HTTP_X_THECITY_SUBDOMAIN'] || nil rescue nil
+        options.subdomain = request.params["subdomain"] || request.headers['HTTP_X_THECITY_SUBDOMAIN'] || options.subdomain || nil rescue nil
       end
 
       uid do
