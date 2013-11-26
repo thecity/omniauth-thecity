@@ -8,11 +8,17 @@ gem 'rake'
 gem 'simplecov'
 gem 'omniauth-oauth2', '~> 1.1.1'
 
-group :development, :test do
-  
+group :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-bundler'
   gem 'growl'
   gem 'rb-fsevent'
+end
+
+group :test do
+  gem 'rspec', '~> 2.7'
+  gem 'rack-test'
+  gem 'webmock'
+  gem 'simplecov'
 end
